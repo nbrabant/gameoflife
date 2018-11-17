@@ -1,6 +1,5 @@
 const isAlive = function (number) {
-    if(number == 3){return true;}
-    return false;
+    return number === 3;
 }
 
 describe('game of life', () => {
