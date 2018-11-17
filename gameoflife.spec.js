@@ -23,11 +23,11 @@ class Cell {
 
 describe('game of life', () => {
     describe('cell alive', () => {
-        it('should be die if there are no neighbors', () => {
+        it('should be dead if there are no neighbors', () => {
             expect(isAlive()).toBeFalsy()
         })
 
-        it('should be die if there are 4 neighbors', () => {
+        it('should be dead if there are 4 neighbors', () => {
             expect(isAlive(4)).toBeFalsy()
         })
         it('should be alive if there are 3 neighbors', () => {
@@ -39,17 +39,17 @@ describe('game of life', () => {
     })
 
     describe('count neighbors', () => {
-        it('should be have 0 neighbors alive', () => {
+        it('should have 0 neighbors alive', () => {
             expect(countNeighbours(0, 0, [])).toBe(0)
         })
 
-        it('should be have 1 neighbors alive', () => {
+        it('should have 1 neighbors alive', () => {
             expect(countNeighbours(0, 0, [
                 new Cell(1,1,true)
             ])).toBe(1)
         })
 
-        it('should be have 2 neighbors and one alive', () => {
+        it('should have 2 neighbors and one alive', () => {
             expect(countNeighbours(0, 0, [
                 new Cell(1,1,true),
                 new Cell(0,1,false)
