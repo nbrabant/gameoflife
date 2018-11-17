@@ -1,8 +1,5 @@
 const isAlive = function (number, alive) {
-    if(alive == true && number == 2){
-    return true;
-        }
-    return number === 3;
+    return number === 3 || (alive && number === 2);
 }
 
 describe('game of life', () => {
