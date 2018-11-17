@@ -4,7 +4,10 @@ const isAlive = function (number, alive) {
 
 const countNeighbours = function(x ,y, grid) {
     return grid.reduce(function(carry, cell) {
-        return ++carry;
+        if (cell.state) {
+            carry++;
+        }
+        return carry;
     }, 0);
 }
 
@@ -43,6 +46,13 @@ describe('game of life', () => {
         it('should be have 1 neighbors alive', () => {
             expect(countNeighbours(0, 0, [
                 new Cell(1,1,true)
+            ])).toBe(1)
+        })
+
+        it('should be have 2 neighbors and one alive', () => {
+            expect(countNeighbours(0, 0, [
+                new Cell(1,1,true),
+                new Cell(0,1,false)
             ])).toBe(1)
         })
     })
