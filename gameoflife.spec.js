@@ -2,6 +2,10 @@ const isAlive = function (number, alive) {
     return number === 3 || (alive && number === 2);
 }
 
+const countNeighbours = function(x ,y, grid) {
+    return 0;
+}
+
 describe('game of life', () => {
     describe('cell alive', () => {
         it('should be die if there are no neighbors', () => {
@@ -19,6 +23,10 @@ describe('game of life', () => {
         })
     })
 
-
+    describe('count neighbors', () => {
+        it('should be have 0 neighbors alive', () => {
+            expect(countNeighbours(0, 0, [])).toBe(0)
+        })
+    })
 
 })
