@@ -1,4 +1,7 @@
 const isAlive = (currentState, numberOfneightboors) => {
+    if (currentState && numberOfneightboors < 2) {
+        return false
+    }
     return true
 };
 
@@ -9,7 +12,7 @@ describe('game of life', () => {
         })
 
         it('should alive cell be dead if has 1 neigthboor', () => {
-            expect(isAlive(true, 3)).toBeFalsy()
+            expect(isAlive(true, 1)).toBeFalsy()
         })
     })
 })
