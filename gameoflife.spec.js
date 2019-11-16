@@ -14,5 +14,9 @@ describe('game of life', () => {
         it('should alive cell be dead if has 1 neigthboor', () => {
             expect(isAlive(true, 1)).toBeFalsy()
         })
+
+        it('should alive cell be dead if has 4 neigthboors', () => {
+            expect(isAlive(true, 4)).toBeFalsy()
+        })
     })
 })
