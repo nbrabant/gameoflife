@@ -1,7 +1,5 @@
 const isAlive = (currentState, numberOfneightboors) => {
-    if (currentState && numberOfneightboors < 2) {
-        return false
-    }else if(currentState && numberOfneightboors > 3){
+    if (currentState && (numberOfneightboors < 2 || numberOfneightboors > 3)) {
         return false
     }
     return true
